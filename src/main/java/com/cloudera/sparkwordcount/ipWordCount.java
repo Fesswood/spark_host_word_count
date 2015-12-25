@@ -96,7 +96,6 @@ public class ipWordCount {
                 return item.swap();
             }
         }).sortByKey(false);
-
         //
         List<Tuple2<Integer, RdrRaw>> collect = finalPair.take(10);
         StringBuilder msgBody = new StringBuilder();
