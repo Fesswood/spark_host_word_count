@@ -5,7 +5,7 @@
   <groupId>com.cloudera.sparkwordcount</groupId>
   <artifactId>hadoopUtils</artifactId>
   <name>"Hadoop Utility tools"</name>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.3-SNAPSHOT</version>
   <build>
     <plugins>
       <plugin>
