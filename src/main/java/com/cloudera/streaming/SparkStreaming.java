@@ -36,7 +36,7 @@ public class SparkStreaming {
         System.out.println("trace 1");
         JavaStreamingContext ssc = new JavaStreamingContext(sparkConf, Durations.seconds(1));
         System.out.println("trace 2");
-        JavaDStream<String> stringJavaDStream = ssc.textFileStream(streamFolder);
+        JavaDStream<String> stringJavaDStream = ssc.receiverStream(new JavaCustomReceiver(args[0]));
 
         System.out.println("trace 3");
         //stringJavaDStream.persist();
