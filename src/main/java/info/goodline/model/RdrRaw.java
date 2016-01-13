@@ -8,6 +8,7 @@ public class RdrRaw {
     public String userId;
     public String userIp;
     public String info;
+    public String date;
 
     private RdrRaw(String[] c) {
         this.serverIp = checkNull(c[8]);
@@ -15,6 +16,7 @@ public class RdrRaw {
         this.userIp = checkNull(c[12]);
         this.dstHost = checkNull(c[10]);
         this.dstParam = checkNull(c[11]);
+        this.date = checkNull(c[0]);
     }
 
     public static RdrRaw getInstance(String string) {
@@ -23,6 +25,11 @@ public class RdrRaw {
             return null;
         }
         return new RdrRaw(c);
+    }
+
+    public String toStringLine() {
+        return String.format("%s,%s,%s,%s,%s,%s"
+                , date, serverIp, userId, userIp, dstHost, dstParam);
     }
 
     @Override
